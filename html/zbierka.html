@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moja zbierka | Pivničný sommelier</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-logo" aria-hidden="true">LOGO</span>
+        <span>Pivničný sommelier</span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="toggle-input" aria-label="Menu">
+      <label for="nav-toggle" class="nav-toggle">&#9776;</label>
+
+      <nav class="main-nav" aria-label="Hlavné menu">
+        <ul>
+          <li><a href="index.html">Úvod</a></li>
+          <li><a href="zbierka.html" aria-current="page">Moja zbierka</a></li>
+          <li><a href="#">Udalosti</a></li>
+          <li><a href="#">Správa <span class="badge">len správca</span></a></li>
+        </ul>
+      </nav>
+
+      <details class="account">
+        <summary>
+          <span class="avatar" aria-hidden="true">MR</span>
+          <span class="account-name">Matúš</span>
+          <span class="chevron" aria-hidden="true">&#9662;</span>
+        </summary>
+        <ul class="dropdown">
+          <li><a href="#">Môj profil</a></li>
+          <li class="separator" aria-hidden="true"></li>
+          <li><a href="#" class="danger">Odhlásiť sa</a></li>
+        </ul>
+      </details>
+    </div>
+  </header>
+
+  <main class="site-main site-main--app">
+    <div class="collection-layout">
+
+      <input type="checkbox" id="filters-toggle" class="toggle-input">
+      <label for="filters-toggle" class="filters-toggle btn">Filtre (3)</label>
+
+      <aside class="filters" aria-label="Filtre zbierky">
+        <form role="search" action="#">
+          <label for="search" class="visually-hidden">Hľadať názov alebo výrobcu</label>
+          <input type="search" id="search" class="input" placeholder="Hľadať názov alebo výrobcu">
+        </form>
+
+        <section class="filter-group">
+          <h2>Kategória</h2>
+          <ul class="category-list">
+            <li><a href="#">Všetky <span class="count">48</span></a></li>
+            <li><a href="#" aria-current="true">Červené víno <span class="count">18</span></a></li>
+            <li><a href="#">Biele víno <span class="count">14</span></a></li>
+            <li><a href="#">Ružové víno <span class="count">3</span></a></li>
+            <li><a href="#">Whisky <span class="count">7</span></a></li>
+            <li><a href="#">Rum <span class="count">4</span></a></li>
+            <li><a href="#">Ostatné <span class="count">2</span></a></li>
+          </ul>
+        </section>
+
+        <section class="filter-group">
+          <h2><label for="country">Krajina</label></h2>
+          <select id="country" class="select">
+            <option>Všetky krajiny</option>
+            <option>Slovensko</option>
+            <option>Francúzsko</option>
+            <option>Španielsko</option>
+            <option>Taliansko</option>
+          </select>
+        </section>
+
+        <section class="filter-group">
+          <h2>Ročník</h2>
+          <div class="year-range">
+            <label for="year-from" class="visually-hidden">Ročník od</label>
+            <input type="number" id="year-from" class="input" value="2015" min="1900" max="2026">
+            <span>až</span>
+            <label for="year-to" class="visually-hidden">Ročník do</label>
+            <input type="number" id="year-to" class="input" value="2020" min="1900" max="2026">
+          </div>
+        </section>
+
+        <section class="filter-group">
+          <h2>Hodnotenie aspoň</h2>
+          <div class="rating" role="group" aria-label="Minimálne hodnotenie 3 z 5">
+            <button type="button" class="is-on" aria-label="1 hviezdička">&#9733;</button>
+            <button type="button" class="is-on" aria-label="2 hviezdičky">&#9733;</button>
+            <button type="button" class="is-on" aria-label="3 hviezdičky">&#9733;</button>
+            <button type="button" aria-label="4 hviezdičky">&#9733;</button>
+            <button type="button" aria-label="5 hviezdičiek">&#9733;</button>
+          </div>
+        </section>
+
+        <label class="switch">
+          Len fľaše, ktoré mám doma
+          <input type="checkbox" checked>
+        </label>
+
+        <button type="button" class="btn-link filters-reset">Zrušiť filtre</button>
+      </aside>
+
+      <section class="collection" aria-labelledby="collection-title">
+        <nav class="breadcrumbs" aria-label="Omrvinková navigácia">
+          <ol>
+            <li><a href="index.html">Domov</a></li>
+            <li><span aria-current="page">Moja zbierka</span></li>
+          </ol>
+        </nav>
+
+        <div class="page-head">
+          <div class="page-title">
+            <h1 id="collection-title">Moja zbierka</h1>
+            <p>18 z 48 fliaš</p>
+          </div>
+          <a href="#" class="btn btn-primary">+ Pridať fľašu</a>
+        </div>
+
+        <dl class="stats">
+          <div class="stat">
+            <dt>Fliaš spolu</dt>
+            <dd>48</dd>
+          </div>
+          <div class="stat">
+            <dt>Hodnota zbierky</dt>
+            <dd>1 240 €</dd>
+          </div>
+          <div class="stat">
+            <dt>Najviac chutila</dt>
+            <dd>Skalický rubín</dd>
+          </div>
+          <div class="stat">
+            <dt>Najčastejšia krajina</dt>
+            <dd>Slovensko</dd>
+          </div>
+        </dl>
+
+        <div class="chips">
+          <span>Filtre:</span>
+          <button type="button" class="chip" aria-label="Zrušiť filter Červené víno">Červené víno <span aria-hidden="true">&times;</span></button>
+          <button type="button" class="chip" aria-label="Zrušiť filter Ročník 2015 až 2020">Ročník 2015 až 2020 <span aria-hidden="true">&times;</span></button>
+          <button type="button" class="chip" aria-label="Zrušiť filter Mám doma">Mám doma <span aria-hidden="true">&times;</span></button>
+        </div>
+
+        <div class="table-wrap">
+          <table class="bottle-table">
+            <caption class="visually-hidden">Zoznam fliaš v zbierke</caption>
+            <thead>
+              <tr>
+                <th scope="col"><button type="button">Názov &#9662;</button></th>
+                <th scope="col" class="col-category"><button type="button">Kategória</button></th>
+                <th scope="col"><button type="button">Krajina</button></th>
+                <th scope="col"><button type="button">Ročník</button></th>
+                <th scope="col"><button type="button">Kusov</button></th>
+                <th scope="col">Kde je uložená</th>
+                <th scope="col"><button type="button">Hodnotenie</button></th>
+                <th scope="col"><span class="visually-hidden">Akcie</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <a href="#" class="bottle-name">Frankovka modrá</a>
+                  <span class="bottle-producer">Vinárstvo Prietrž</span>
+                </td>
+                <td class="col-category" data-label="Kategória">Červené víno</td>
+                <td data-label="Krajina">Slovensko</td>
+                <td data-label="Ročník">2018</td>
+                <td data-label="Kusov">3</td>
+                <td data-label="Kde je uložená">Pivnica, regál A2</td>
+                <td data-label="Hodnotenie">
+                  <div class="rating" role="group" aria-label="Hodnotenie 4 z 5">
+                    <button type="button" class="is-on" aria-label="1 hviezdička">&#9733;</button>
+                    <button type="button" class="is-on" aria-label="2 hviezdičky">&#9733;</button>
+                    <button type="button" class="is-on" aria-label="3 hviezdičky">&#9733;</button>
+                    <button type="button" class="is-on" aria-label="4 hviezdičky">&#9733;</button>
+                    <button type="button" aria-label="5 hviezdičiek">&#9733;</button>
+                  </div>
+                </td>
+                <td class="cell-actions">
+                  <details class="row-menu" name="row-menu">
+                    <summary aria-label="Akcie pre fľašu Frankovka modrá">&#8943;</summary>
+                    <ul class="dropdown">
+                      <li><a href="#">Upraviť</a></li>
+                      <li><a href="#">Pridať poznámku</a></li>
+                      <li><a href="#">Pridať na udalosť</a></li>
+                      <li class="separator" aria-hidden="true"></li>
+                      <li><button type="button" class="danger">Odstrániť</button></li>
+                    </ul>
+                  </details>
+                  <a href="#" class="row-open" aria-label="Otvoriť detail fľaše Frankovka modrá">&#8250;</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="#" class="bottle-name">Skalický rubín</a>
+                  <span class="bottle-producer">Vinárstvo Skalica</span>
+                </td>
+                <td class="col-category" data-label="Kategória">Červené víno</td>
+                <td data-label="Krajina">Slovensko</td>
+                <td data-label="Ročník">2016</td>
+                <td data-label="Kusov">1</td>
+                <td data-label="Kde je uložená">Pivnica, regál B1</td>
+                <td data-label="Hodnotenie">
+                  <div class="rating" role="group" aria-label="Hodnotenie 5 z 5">
+                    <button type="button" class="is-on" aria-label="1 hviezdička">&#9733;</button>
+                    <button type="button" class="is-on" aria-label="2 hviezdičky">&#9733;</button>
+                    <button type="button" class="is-on" aria-label="3 hviezdičky">&#9733;</button>
+                    <button type="button" class="is-on" aria-label="4 hviezdičky">&#9733;</button>
+                    <button type="button" class="is-on" aria-label="5 hviezdičiek">&#9733;</button>
+                  </div>
+                </td>
+                <td class="cell-actions">
+                  <details class="row-menu" name="row-menu">
+                    <summary aria-label="Akcie pre fľašu Skalický rubín">&#8943;</summary>
+                    <ul class="dropdown">
+                      <li><a href="#">Upraviť</a></li>
+                      <li><a href="#">Pridať poznámku</a></li>
+                      <li><a href="#">Pridať na udalosť</a></li>
+                      <li class="separator" aria-hidden="true"></li>
+                      <li><button type="button" class="danger">Odstrániť</button></li>
+                    </ul>
+                  </details>
+                  <a href="#" class="row-open" aria-label="Otvoriť detail fľaše Skalický rubín">&#8250;</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="#" class="bottle-name">Modrý Portugal</a>
+                  <span class="bottle-producer">Vinárstvo Radošovce</span>
+                </td>
+                <td class="col-category" data-label="Kategória">Červené víno</td>
+                <td data-label="Krajina">Slovensko</td>
+                <td data-label="Ročník">2017</td>
+                <td data-label="Kusov">2</td>
+                <td data-label="Kde je uložená">Obývačka, vitrína</td>
+                <td data-label="Hodnotenie">
+                  <span class="rating-empty">zatiaľ nehodnotené</span>
+                </td>
+                <td class="cell-actions">
+                  <details class="row-menu" name="row-menu">
+                    <summary aria-label="Akcie pre fľašu Modrý Portugal">&#8943;</summary>
+                    <ul class="dropdown">
+                      <li><a href="#">Upraviť</a></li>
+                      <li><a href="#">Pridať poznámku</a></li>
+                      <li><a href="#">Pridať na udalosť</a></li>
+                      <li class="separator" aria-hidden="true"></li>
+                      <li><button type="button" class="danger">Odstrániť</button></li>
+                    </ul>
+                  </details>
+                  <a href="#" class="row-open" aria-label="Otvoriť detail fľaše Modrý Portugal">&#8250;</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="#" class="bottle-name">Svätovavrinecké</a>
+                  <span class="bottle-producer">Vinárstvo Holíč</span>
+                </td>
+                <td class="col-category" data-label="Kategória">Červené víno</td>
+                <td data-label="Krajina">Slovensko</td>
+                <td data-label="Ročník">2019</td>
+                <td data-label="Kusov">6</td>
+                <td data-label="Kde je uložená">Pivnica, regál A1</td>
+                <td data-label="Hodnotenie">
+                  <div class="rating" role="group" aria-label="Hodnotenie 3 z 5">
+                    <button type="button" class="is-on" aria-label="1 hviezdička">&#9733;</button>
+                    <button type="button" class="is-on" aria-label="2 hviezdičky">&#9733;</button>
+                    <button type="button" class="is-on" aria-label="3 hviezdičky">&#9733;</button>
+                    <button type="button" aria-label="4 hviezdičky">&#9733;</button>
+                    <button type="button" aria-label="5 hviezdičiek">&#9733;</button>
+                  </div>
+                </td>
+                <td class="cell-actions">
+                  <details class="row-menu" name="row-menu">
+                    <summary aria-label="Akcie pre fľašu Svätovavrinecké">&#8943;</summary>
+                    <ul class="dropdown">
+                      <li><a href="#">Upraviť</a></li>
+                      <li><a href="#">Pridať poznámku</a></li>
+                      <li><a href="#">Pridať na udalosť</a></li>
+                      <li class="separator" aria-hidden="true"></li>
+                      <li><button type="button" class="danger">Odstrániť</button></li>
+                    </ul>
+                  </details>
+                  <a href="#" class="row-open" aria-label="Otvoriť detail fľaše Svätovavrinecké">&#8250;</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="#" class="bottle-name">Rulandské modré</a>
+                  <span class="bottle-producer">Vinárstvo Vrádište</span>
+                </td>
+                <td class="col-category" data-label="Kategória">Červené víno</td>
+                <td data-label="Krajina">Slovensko</td>
+                <td data-label="Ročník">2020</td>
+                <td data-label="Kusov">2</td>
+                <td data-label="Kde je uložená">Pivnica, regál B3</td>
+                <td data-label="Hodnotenie">
+                  <div class="rating" role="group" aria-label="Hodnotenie 4 z 5">
+                    <button type="button" class="is-on" aria-label="1 hviezdička">&#9733;</button>
+                    <button type="button" class="is-on" aria-label="2 hviezdičky">&#9733;</button>
+                    <button type="button" class="is-on" aria-label="3 hviezdičky">&#9733;</button>
+                    <button type="button" class="is-on" aria-label="4 hviezdičky">&#9733;</button>
+                    <button type="button" aria-label="5 hviezdičiek">&#9733;</button>
+                  </div>
+                </td>
+                <td class="cell-actions">
+                  <details class="row-menu" name="row-menu">
+                    <summary aria-label="Akcie pre fľašu Rulandské modré">&#8943;</summary>
+                    <ul class="dropdown">
+                      <li><a href="#">Upraviť</a></li>
+                      <li><a href="#">Pridať poznámku</a></li>
+                      <li><a href="#">Pridať na udalosť</a></li>
+                      <li class="separator" aria-hidden="true"></li>
+                      <li><button type="button" class="danger">Odstrániť</button></li>
+                    </ul>
+                  </details>
+                  <a href="#" class="row-open" aria-label="Otvoriť detail fľaše Rulandské modré">&#8250;</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="#" class="bottle-name">Dunaj</a>
+                  <span class="bottle-producer">Vinárstvo Kopčany</span>
+                </td>
+                <td class="col-category" data-label="Kategória">Červené víno</td>
+                <td data-label="Krajina">Slovensko</td>
+                <td data-label="Ročník">2015</td>
+                <td data-label="Kusov">1</td>
+                <td data-label="Kde je uložená">Kuchyňa, horná skrinka</td>
+                <td data-label="Hodnotenie">
+                  <div class="rating" role="group" aria-label="Hodnotenie 2 z 5">
+                    <button type="button" class="is-on" aria-label="1 hviezdička">&#9733;</button>
+                    <button type="button" class="is-on" aria-label="2 hviezdičky">&#9733;</button>
+                    <button type="button" aria-label="3 hviezdičky">&#9733;</button>
+                    <button type="button" aria-label="4 hviezdičky">&#9733;</button>
+                    <button type="button" aria-label="5 hviezdičiek">&#9733;</button>
+                  </div>
+                </td>
+                <td class="cell-actions">
+                  <details class="row-menu" name="row-menu">
+                    <summary aria-label="Akcie pre fľašu Dunaj">&#8943;</summary>
+                    <ul class="dropdown">
+                      <li><a href="#">Upraviť</a></li>
+                      <li><a href="#">Pridať poznámku</a></li>
+                      <li><a href="#">Pridať na udalosť</a></li>
+                      <li class="separator" aria-hidden="true"></li>
+                      <li><button type="button" class="danger">Odstrániť</button></li>
+                    </ul>
+                  </details>
+                  <a href="#" class="row-open" aria-label="Otvoriť detail fľaše Dunaj">&#8250;</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pager">
+          <p>Zobrazujem 1 až 6 z 18</p>
+          <nav aria-label="Stránkovanie">
+            <ul>
+              <li><a aria-disabled="true" aria-label="Predchádzajúca strana">&#8249;</a></li>
+              <li><a href="#" aria-current="page">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#" aria-label="Nasledujúca strana">&#8250;</a></li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Pivničný sommelier</p>
+      <nav aria-label="Doplnkové odkazy">
+        <ul>
+          <li><a href="#">O aplikácii</a></li>
+          <li><a href="#">Kontakt</a></li>
+          <li><a href="#">Podmienky používania</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>

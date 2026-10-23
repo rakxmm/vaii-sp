@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Úvod | Pivničný sommelier</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-logo" aria-hidden="true">LOGO</span>
+        <span>Pivničný sommelier</span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="toggle-input" aria-label="Menu">
+      <label for="nav-toggle" class="nav-toggle">&#9776;</label>
+
+      <nav class="main-nav" aria-label="Hlavné menu">
+        <ul>
+          <li><a href="index.html" aria-current="page">Úvod</a></li>
+          <li><a href="zbierka.html">Moja zbierka</a></li>
+          <li><a href="#">Udalosti</a></li>
+          <li><a href="#">Správa <span class="badge">len správca</span></a></li>
+        </ul>
+      </nav>
+
+      <details class="account">
+        <summary>
+          <span class="avatar" aria-hidden="true">MR</span>
+          <span class="account-name">Matúš</span>
+          <span class="chevron" aria-hidden="true">&#9662;</span>
+        </summary>
+        <ul class="dropdown">
+          <li><a href="#">Môj profil</a></li>
+          <li class="separator" aria-hidden="true"></li>
+          <li><a href="#" class="danger">Odhlásiť sa</a></li>
+        </ul>
+      </details>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <div class="container">
+      <div class="subbar">
+        <nav class="breadcrumbs" aria-label="Omrvinková navigácia">
+          <ol>
+            <li><span aria-current="page">Domov</span></li>
+          </ol>
+        </nav>
+        <p class="flash" role="status">Fľaša bola uložená</p>
+      </div>
+
+      <section class="placeholder">
+        <h1>Obsah stránky</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Pivničný sommelier</p>
+      <nav aria-label="Doplnkové odkazy">
+        <ul>
+          <li><a href="#">O aplikácii</a></li>
+          <li><a href="#">Kontakt</a></li>
+          <li><a href="#">Podmienky používania</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>
